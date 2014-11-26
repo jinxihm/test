@@ -1,0 +1,216 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="a test space">
+    <meta name="author" content="fangliang">
+
+    <!-- Bootstrap -->
+    <link href="resources/bootstrap331dist/css/bootstrap.css" rel="stylesheet">
+    <!-- icons -->
+    <link href="resources/octicons/octicons.css" rel="stylesheet">
+    <link href="resources/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- make IE8 support HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="resources/jquery/jquery-1.11.1.min.js"></script>
+    <script src="resources/bootstrap331dist/js/bootstrap.min.js"></script>
+
+    <!-- Local JavaScript -->
+    <script src="js/github.info.js"></script>
+
+    <title>My blog</title>
+
+    <style>
+		.mygap{ margin-bottom:10px; }
+		.notes:before{ content: "\270D\ "; }
+		.icon-bold:before{ content: "\2665"; } 
+		.icon-underline:before{ content: "\f0cd"; } 
+		.icon-strikethrough:before{ content: "\f0cc"; } 
+		span.vline {
+					border-left: 1px solid #bbb;
+					padding-right: 10px;
+					}
+		.icon-minus:before{ content: "\f068"; } 
+		.icon-code:before{ content: "\f121"; } 
+		.icon-link:before{ content: "\f0c1"; } 
+		.icon-picture:before{ content: "\e060"; } 
+		
+    </style>
+    <script>
+      $(document).ready(function(){    	  
+    	  
+    	  function showHtml(sel){
+    		  //debugger;
+    		  var h = $(sel).html()
+    		  //alert(h);
+    		  
+    	  }
+    	  
+    	  // 编辑
+    	  $('#editBlogBtn').click(function(){    		  
+    		 $('#blogTitle').attr('contentEditable', true);
+    		 $('#blogContent').attr('contentEditable', true);
+    	  });
+    	  $('#deleteBlogBtn').click(function(){    		  
+    		  
+     	  });
+    	  // 新增
+    	  $('#createBlogBtn').click(function(){    		  
+    		  
+     	  });
+    	  // 保存
+    	  $('#saveBlogBtn').click(function(){
+    		  //showHtml("#blogTitle");
+    		  //showHtml("#blogContent");
+    		  
+    		  //$('#blogContentOutput').html($('#blogContent').html());
+    		  // 整个html文档：    		  
+    		  var url = "https://api.github.com/repos/jinxihm/test/contents/";
+    		  var fileName = (new Date()).getTime() + ".html" ;
+    		  var token = "?access_token=41228f8e62cef808a68215e6a7b90296465b3db9";
+    		  url = url + fileName + token;
+    		  var pageHtml = $('html').html();
+    		  // 编码成base64
+    		  pageHtml64 = window.btoa(unescape(encodeURIComponent( pageHtml )));
+    		  var input = {
+    				  "message": "my commit message",
+    				  "committer": {
+    				    "name": "n1",
+    				    "email": "n2@gmail.com"
+    				  },
+    				  "content": pageHtml64
+    				};
+    		  var s = JSON.stringify(input)
+    		  $.ajax({
+    			  type: "put",
+    			  url: url,
+    			  contentType: "application/json",
+    			  data: s,
+    			  dataType: "json",
+    			  success: function(data){
+    				  alert(JSON.stringify(data));
+    			  },
+    			  error: function(data){
+    				  alert(JSON.stringify(data));
+    			  }
+    		  });
+    		  
+     	  });
+    	  // 取消
+    	  $('#cancleBtn').click(function(){
+    		 // html = oldHtml
+    		 $('#blogTitle').attr('contentEditable', false);
+    		 $('#blogContent').attr('contentEditable', false);
+    	  });
+      });
+    </script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+  	<div class="col-md-12">&nbsp;</div>
+  </div>
+  <div class="row">
+  	<div class="col-md-1">  		
+  		
+  	</div>
+    <div class="col-md-8">
+    
+    	<div class="blog ">
+    		<div class="blog-title">
+    			<h3 id="blogTitle" style="padding-top:10px" contenteditable="false">javascript 闭包</h3>
+    		</div>
+    		<div id="blogContent" class="blog-content" style="padding-top:10px" contenteditable="false">  
+    		<p>  
+    			注意力集中在内容上
+    		</p>
+    		<p>
+    		viewport:
+    		http://www.cnblogs.com/2050/p/3877280.html<br>
+    		http://www.smashingmagazine.com/tag/techniques/<br>
+    		http://www.iinterest.net/2011/05/02/about-viewport/<br>
+    		</p>    		
+    		</div>
+    		
+    		<div id="blogContentOutput" class="blog-content" style="padding-top:10px">
+    		
+    		</div>
+    	</div><!-- end  blog -->
+    	
+    	
+    	
+    </div>
+    <div class="col-md-3">
+    	<div><h3>&nbsp;</h3></div>
+    	
+    	<div class="mygap">
+	    	<button type="button" id="editBlogBtn" class="btn btn-success octicon octicon-pencil"></button>
+	    	<button type="button" id="deleteBlogBtn" class="btn btn-success octicon octicon-trashcan"></button> 
+	    	<button type="button" id="createBlogBtn" class="btn btn-success octicon octicon-plus"></button>   	
+    	</div>
+    	<div class="mygap">    	
+	    	<button type="button" id="saveBlogBtn" class="btn btn-success">保存</button>
+	    	<button type="button" id="cancleBtn" class="btn btn-default">取消</button>
+    	</div>
+    	
+    	
+    	<div class="mygap">
+    		<span class="glyphicon glyphicon-font" title="字体"></span>
+    		<span class="glyphicon glyphicon-bold" title="加粗"></span>
+    		<span class="glyphicon glyphicon-italic" title="斜体"></span>
+    		
+    		<span class="glyphicon glyphicon-align-left" title="左对齐"></span>
+    		<span class="glyphicon glyphicon-align-center" title="居中"></span>
+    		<span class="glyphicon glyphicon-align-right" title="右对齐"></span>
+    		<span class="glyphicon glyphicon-align-justify" title="两端对齐"></span>
+    		
+    		<span class="glyphicon glyphicon-link" title="超链接"></span>
+    		<span class="glyphicon glyphicon-picture" title="图片"></span>
+    		<span class="glyphicon glyphicon-film" title="视频"></span>
+    		
+    		
+    	</div>
+		
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title mega-octicon octicon-bookmark"> 书签</h3>
+		  </div>
+		  <div class="panel-body" contenteditable="true">
+		    	
+				  <div><a href="#" class=" ">Cras justo odio</a>  </div>
+				  <div><a href="#" class="">Dapibus ac facilisis in</a></div>
+				  <div><a href="#" class="">Morbi leo risus</a></div>
+				
+		  </div>
+		</div>
+		
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title mega-octicon notes">笔记</h3>
+		  </div>
+		  <div class="panel-body" contenteditable="true">
+		    	笔记
+		  </div>
+		</div>
+		
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <!-- <h3 class="panel-title mega-octicon octicon-link"> 参考</h3> -->
+		    <h3 class="panel-title mega-octicon octicon-quote"> 参考</h3>
+		  </div>
+		  <div class="panel-body" contenteditable="true">
+		    	参考
+		  </div>
+		</div>
+    
+    </div>
+  </div>
+</div>
+
+
+</body>
