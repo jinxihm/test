@@ -1,0 +1,159 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="a test space">
+    <meta name="author" content="fangliang">
+
+    <!-- Bootstrap -->
+    <link href="resources/bootstrap331dist/css/bootstrap.css" rel="stylesheet">
+    <!-- icons -->
+    <link href="resources/octicons/octicons.css" rel="stylesheet">
+
+    <!-- make IE8 support HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="resources/jquery/jquery-1.11.1.min.js"></script>
+    <script src="resources/bootstrap331dist/js/bootstrap.min.js"></script>
+
+    <!-- Local JavaScript -->
+    <script src="js/github.info.js"></script>
+
+    <title>My blog</title>
+
+    <style>
+        
+    </style>
+    <script>
+      $(document).ready(function(){    	  
+    	  
+    	  function showHtml(sel){
+    		  //debugger;
+    		  var h = $(sel).html()
+    		  //alert(h);
+    		  
+    	  }
+    	  
+    	  // 编辑
+    	  $('#editBlogBtn').click(function(){    		  
+    		 $('#blogTitle').attr('contentEditable', true);
+    		 $('#blogContent').attr('contentEditable', true);
+    	  });
+    	  $('#deleteBlogBtn').click(function(){    		  
+    		  
+     	  });
+    	  // 新增
+    	  $('#createBlogBtn').click(function(){    		  
+    		  
+     	  });
+    	  // 保存
+    	  $('#saveBlogBtn').click(function(){
+    		  //showHtml("#blogTitle");
+    		  //showHtml("#blogContent");
+    		  
+    		  //$('#blogContentOutput').html($('#blogContent').html());
+    		  // 整个html文档：    		  
+    		  var url = "https://api.github.com/repos/jinxihm/test/contents/";
+    		  var fileName = (new Date()).getTime() + ".html" ;
+    		  var token = "?access_token=41228f8e62cef808a68215e6a7b90296465b3db9";
+    		  url = url + fileName + token;
+    		  var pageHtml = $('html').html();
+    		  // 编码成base64
+    		  pageHtml64 = window.btoa(unescape(encodeURIComponent( pageHtml )));
+    		  var input = {
+    				  "message": "my commit message",
+    				  "committer": {
+    				    "name": "n1",
+    				    "email": "n2@gmail.com"
+    				  },
+    				  "content": pageHtml64
+    				};
+    		  var s = JSON.stringify(input)
+    		  $.ajax({
+    			  type: "put",
+    			  url: url,
+    			  contentType: "application/json",
+    			  data: s,
+    			  dataType: "json",
+    			  success: function(data){
+    				  alert(JSON.stringify(data));
+    			  },
+    			  error: function(data){
+    				  alert(JSON.stringify(data));
+    			  }
+    		  });
+    		  
+     	  });
+    	  // 取消
+    	  $('#cancleBtn').click(function(){
+    		 // html = oldHtml
+    		 $('#blogTitle').attr('contentEditable', false);
+    		 $('#blogContent').attr('contentEditable', false);
+    	  });
+      });
+    </script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+  	<div class="col-md-12">&nbsp;</div>
+  </div>
+  <div class="row">
+  	<div class="col-md-1">  		
+  		
+  	</div>
+    <div class="col-md-8">
+    
+    	<div class="blog ">
+    		<div class="blog-title">
+    			<h3 id="blogTitle" style="padding-top:10px" contenteditable="true">javascript 闭包</h3>
+    		</div>
+    		<div id="blogContent" class="blog-content" style="padding-top:10px" contenteditable="true">  
+    		<h3 id="Unicode_.E5.AD.97.E7.AC.A6.E4.B8.B2" style="margin: 0px 0px 12px; padding: 0px; border: 0px; font-family: 'Open Sans', sans-serif; line-height: 24px; font-size: 1.71428571428571rem; letter-spacing: -0.5px; color: rgb(77, 78, 83);">Unicode 字符串</h3><p style="margin-bottom: 24px; padding: 0px; border: 0px; color: rgb(77, 78, 83); font-family: 'Open Sans', sans-serif; line-height: 21px;">在各浏览器中,使用&nbsp;<code style="margin: 0px 0px 24px; padding: 0px; border: 0px; font-style: inherit; font-weight: inherit; font-family: 'Courier New', 'Andale Mono', monospace;">window.btoa</code>&nbsp;对Unicode字符串进行编码都会触发一个字符越界的异常.</p><p style="margin-bottom: 24px; padding: 0px; border: 0px; color: rgb(77, 78, 83); font-family: 'Open Sans', sans-serif; line-height: 21px;">先把Unicode字符串转换为UTF-8编码,可以解决这个问题, 代码来自<a class="external external-icon" href="http://ecmanaut.blogspot.com/2006/07/encoding-decoding-utf8-in-javascript.html" title="http://ecmanaut.blogspot.com/2006/07/encoding-decoding-utf8-in-javascript.html" style="margin: 0px; padding: 0px; border: 0px; color: rgb(0, 149, 221); white-space: pre-line;">Johan Sundstr?m</a>:</p><pre class=" language-html" data-number="" style="margin-bottom: 20px; padding: 1em 0px 1em 30px; border-width: 0px 0px 0px 6px; border-left-color: rgb(85, 138, 187); font-family: Consolas, Monaco, 'Andale Mono', monospace; font-size: 14px; line-height: 19px; direction: ltr; word-break: normal; tab-size: 4; position: relative; color: rgb(77, 78, 83); text-shadow: none; background: url(https://developer.cdn.mozilla.net/media/redesign/img/blueprint-dark.png) 50% 0% rgb(250, 251, 252);"><code class=" language-html" style="margin: 0px 0px 24px; border: 0px; font-style: inherit; font-weight: inherit; font-family: Consolas, Monaco, 'Andale Mono', monospace; direction: ltr; white-space: pre; word-spacing: normal; word-break: normal; tab-size: 4; text-shadow: none;">function utf8_to_b64( str ) {
+    return window.btoa(unescape(encodeURIComponent( str )));
+}
+
+function b64_to_utf8( str ) {
+    return decodeURIComponent(escape(window.atob( str )));
+}
+
+// Usage:
+utf8_to_b64('? à la mode'); // "4pyTIMOgIGxhIG1vZGU="
+b64_to_utf8('4pyTIMOgIGxhIG1vZGU='); // "? à la mode"
+//译者注:在js引擎内部,encodeURIComponent(str)相当于escape(unicodeToUTF8(str))
+//所以可以推导出unicodeToUTF8(str)等同于unescape(encodeURIComponent(str))</code></pre><pre class=" language-html" data-number="" style="margin-bottom: 20px; padding: 1em 0px 1em 30px; border-width: 0px 0px 0px 6px; border-left-color: rgb(85, 138, 187); direction: ltr; word-break: normal; tab-size: 4; position: relative; text-shadow: none; background: url(https://developer.cdn.mozilla.net/media/redesign/img/blueprint-dark.png) 50% 0% rgb(250, 251, 252);"><code class=" language-html" style="margin: 0px 0px 24px; border: 0px; border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; direction: ltr; word-break: normal; tab-size: 4; text-shadow: none;"><font color="#4d4e53" face="Consolas, Monaco, Andale Mono, monospace"><span style="font-size: 14px; line-height: 19px; white-space: pre;">https://developer.mozilla.org/zh-CN/docs/Web/API/Window.btoa#Unicode_Strings</span><span style="font-size: 14px; font-style: inherit; font-weight: inherit; line-height: 19px; white-space: pre; word-spacing: normal;"><br></span></font></code></pre>    		
+    		</div>
+    		
+    		<div id="blogContentOutput" class="blog-content" style="padding-top:10px">
+    		
+    		</div>
+    	</div><!-- end  blog -->
+    	
+    	
+    	
+    </div>
+    <div class="col-md-3">
+    	<div><h3>&nbsp;</h3></div>
+    	
+    	<div>
+	    	<button type="button" id="editBlogBtn" class="btn btn-success octicon octicon-pencil">编辑</button>
+	    	<button type="button" id="deleteBlogBtn" class="btn btn-success octicon octicon-trashcan">删除</button> 
+	    	<button type="button" id="createBlogBtn" class="btn btn-success octicon octicon-plus">新增</button>   	
+    	</div>
+    	<div>
+    		<input type="text" class="form-control" placeholder="Text input">
+    	</div>
+    	<div>    	
+	    	<button type="button" id="saveBlogBtn" class="btn btn-success">保存</button>
+	    	<button type="button" id="cancleBtn" class="btn btn-default">取消</button>
+    	</div>
+    
+    </div>
+  </div>
+</div>
+
+
+</body>
