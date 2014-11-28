@@ -1,0 +1,239 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="a test space">
+<meta name="author" content="fangliang">
+<title>My blog</title>
+
+<link href="resources/bootstrap331dist/css/bootstrap.css" rel="stylesheet">
+<link href="resources/octicons/octicons.css" rel="stylesheet">
+<!-- icons -->
+<link href="resources/css/wowblog.css" rel="stylesheet">
+<!-- icons -->
+
+<!-- make IE8 support HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script src="resources/jquery/jquery-1.11.1.min.js"></script>
+<script src="resources/bootstrap331dist/js/bootstrap.min.js"></script>
+
+<script src="resources/js/wowblog.js"></script>
+
+<!-- Local JavaScript -->
+
+
+
+<style>
+.btngrp * {
+  padding-right: 15px;
+  font-size: 24px;
+  color: #777;
+}
+
+.btngrp *:hover {
+  color: #4183c4;
+  cursor: pointer;
+}
+</style>
+
+<script>
+
+var blogInfo ={curState: "loaded"};
+
+</script>
+</head>
+<body style="background-color: #F5F5D5">
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: white">
+    <div class="container">
+      <div class="row" style="margin-top: 15px">
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-8">
+
+          <div class="btngrp">
+
+            <a href="index.html" target="_blank">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            </a>
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            <span id="edit" class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+            <span id="create" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            <span class="mega-octicon octicon-bookmark" style="font-size: 32px;"></span>
+            <span class=" mega-octicon notes" style="font-size: 32px;"></span>
+            <span class=" mega-octicon octicon-quote" style="font-size: 32px;"></span>
+            <span id="save" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            <span id="cancel" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+
+            <div class="myhide">
+              <span class="mega-octicon octicon-pencil mybtn" style="font-size: 24px;"></span>
+              <span class="mega-octicon octicon-trashcan mybtn" style="font-size: 24px;">
+              </span> <span class="mega-octicon octicon-plus mybtn" style="font-size: 24px;"></span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-3">
+          <div class="btngrp">
+            <span class="myhide"><img alt="Brand" src="resources/img/pugysmall.jpeg"></span> <span class="glyphicon glyphicon-user" aria-hidden="true"></span>Signin
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12" style="height: 100px">&nbsp;</div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-7">
+
+        <div class="blog ">
+          <div id="blogTitle" class="blog-title mybgcolor" contenteditable="true" style="border: 1px solid rgb(255, 192, 203);">Update a file</div>
+
+          <div class="mydivider"></div>
+          <!-- 分割线 -->
+
+          <div id="blogContent" contenteditable="true" class="blog-content" style="padding-top: 2px; border: 1px solid gray; min-height: 50px;"><p style="border: 0px; margin-top: 1em; margin-bottom: 1em; padding: 0px; color: rgb(57, 57, 57); font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;">This method updates a file in a repository</p><pre style="border-color: rgb(202, 202, 202); margin-top: 2em; margin-bottom: 2em; padding: 10px; font-size: 12px; font-stretch: normal; line-height: 1.4em; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; color: rgb(57, 57, 57); background-color: rgb(250, 250, 251);"><code style="border: 0px; margin: 0px; font-size: 12px; white-space: pre; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">PUT /repos/:owner/:repo/contents/:path
+</code></pre><h3 id="parameters-3" style="border: 0px; margin: 1.5em 0px 0.5em; padding: 0px; font-size: 14px; color: rgb(51, 51, 51); position: relative; font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;"><a class="header-anchor" href="https://developer.github.com/v3/repos/contents/#parameters-3" style="border: 0px; margin: 0px; padding: 0px 5px 0px 10px; font-size: 16px; color: rgb(51, 51, 51); position: absolute; left: -32px; top: 0px; opacity: 0; height: 21px; width: 20px; font-stretch: normal; line-height: 20px; font-family: octicons; -webkit-font-smoothing: antialiased; -webkit-transition: opacity 0.3s ease-in-out 0s; transition: opacity 0.3s ease-in-out 0s;"></a>Parameters</h3><table style="border: 0px; margin: 15px 0px; padding: 0px; width: 630px; overflow: auto; display: block; color: rgb(57, 57, 57); font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px; background-color: rgb(255, 255, 255);"><thead style="border: 0px; margin: 0px; padding: 0px; font-size: inherit; font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline;"><tr style="border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 0px; padding: 0px;"><th style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top; text-align: center;">Name</th><th style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top; text-align: center;">Type</th><th style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top; text-align: center;">Description</th></tr></thead><tbody style="margin: 0px; padding: 0px;"><tr style="border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 0px; padding: 0px;"><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">path</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">string</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><strong style="border: 0px; margin: 0px; padding: 0px;">Required</strong>. The content path.</td></tr><tr style="border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 0px; padding: 0px;"><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">message</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">string</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><strong style="border: 0px; margin: 0px; padding: 0px;">Required</strong>. The commit message.</td></tr><tr style="border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 0px; padding: 0px;"><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">content</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">string</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><strong style="border: 0px; margin: 0px; padding: 0px;">Required</strong>. The updated file content, Base64 encoded.</td></tr><tr style="border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 0px; padding: 0px;"><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">sha</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">string</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><strong style="border: 0px; margin: 0px; padding: 0px;">Required</strong>. The blob SHA of the file being replaced.</td></tr><tr style="border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 0px; padding: 0px;"><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">branch</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">string</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;">The branch name. Default: the repository’s default branch (usually<code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">master</code>)</td></tr></tbody></table><h3 id="optional-parameters-1" style="border: 0px; margin: 1.5em 0px 0.5em; padding: 0px; font-size: 14px; color: rgb(51, 51, 51); position: relative; font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;"><a class="header-anchor" href="https://developer.github.com/v3/repos/contents/#optional-parameters-1" style="border: 0px; margin: 0px; padding: 0px 5px 0px 10px; font-size: 16px; color: rgb(51, 51, 51); position: absolute; left: -32px; top: 0px; opacity: 0; height: 21px; width: 20px; font-stretch: normal; line-height: 20px; font-family: octicons; -webkit-font-smoothing: antialiased; -webkit-transition: opacity 0.3s ease-in-out 0s; transition: opacity 0.3s ease-in-out 0s;"></a>Optional Parameters</h3><p style="border: 0px; margin-top: 1em; margin-bottom: 1em; padding: 0px; color: rgb(57, 57, 57); font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;">You can provide an additional&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">committer</code>&nbsp;parameter, which is a hash containing information about the committer. Or, you can provide an&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">author</code>&nbsp;parameter, which is a hash containing information about the author.</p><p style="border: 0px; margin-top: 1em; margin-bottom: 1em; padding: 0px; color: rgb(57, 57, 57); font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;">The&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">author</code>&nbsp;section is optional and is filled in with the&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">committer</code>&nbsp;information if omitted. If the&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">committer</code>&nbsp;information is omitted, the authenticated user’s information is used.</p><p style="border: 0px; margin-top: 1em; margin-bottom: 1em; padding: 0px; color: rgb(57, 57, 57); font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;">You must provide values for both&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">name</code>&nbsp;and&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">email</code>, whether you choose to use&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">author</code>&nbsp;or&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">committer</code>. Otherwise, you’ll receive a&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">422</code>&nbsp;status code.</p><p style="border: 0px; margin-top: 1em; margin-bottom: 1em; padding: 0px; color: rgb(57, 57, 57); font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;">Both the&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">author</code>&nbsp;and&nbsp;<code style="border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px 3px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; display: inline-block; background-color: rgb(249, 249, 249);">committer</code>&nbsp;parameters have the same keys:</p><table style="border: 0px; margin: 15px 0px; padding: 0px; width: 630px; overflow: auto; display: block; color: rgb(57, 57, 57); font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px; background-color: rgb(255, 255, 255);"><thead style="border: 0px; margin: 0px; padding: 0px; font-size: inherit; font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline;"><tr style="border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 0px; padding: 0px;"><th style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top; text-align: center;">Name</th><th style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top; text-align: center;">Type</th><th style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top; text-align: center;">Description</th></tr></thead><tbody style="margin: 0px; padding: 0px;"><tr style="border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 0px; padding: 0px;"><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">name</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">string</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;">The name of the author (or committer) of the commit</td></tr><tr style="border-width: 1px 0px 0px; border-top-style: solid; border-top-color: rgb(204, 204, 204); margin: 0px; padding: 0px;"><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">email</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;"><code style="border: 0px; margin: 0px; padding: 0px; font-size: 12px; white-space: nowrap; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">string</code></td><td style="border: 1px solid rgb(221, 221, 221); margin: 0px; padding: 6px 13px; vertical-align: top;">The email of the author (or committer) of the commit</td></tr></tbody></table><h3 id="example-input-1" style="border: 0px; margin: 1.5em 0px 0.5em; padding: 0px; font-size: 14px; color: rgb(51, 51, 51); position: relative; font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;"><a class="header-anchor" href="https://developer.github.com/v3/repos/contents/#example-input-1" style="border: 0px; margin: 0px; padding: 0px 5px 0px 10px; font-size: 16px; color: rgb(51, 51, 51); position: absolute; left: -32px; top: 0px; opacity: 0; height: 21px; width: 20px; font-stretch: normal; line-height: 20px; font-family: octicons; -webkit-font-smoothing: antialiased; -webkit-transition: opacity 0.3s ease-in-out 0s; transition: opacity 0.3s ease-in-out 0s;"></a>Example Input</h3><pre style="border-color: rgb(202, 202, 202); margin-top: 2em; margin-bottom: 2em; padding: 10px; font-size: 12px; font-stretch: normal; line-height: 1.4em; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px; color: rgb(57, 57, 57); background-color: rgb(250, 250, 251);"><code class="language-javascript highlight" style="border: 0px; margin: 0px; font-size: 12px; white-space: pre; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;"><span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+  <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"message"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"my commit message"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+  <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"committer"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"name"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"Scott Chacon"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"email"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"schacon@gmail.com"</span>
+  <span class="p" style="border: 0px; margin: 0px; padding: 0px;">},</span>
+  <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"content"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"bXkgdXBkYXRlZCBmaWxlIGNvbnRlbnRz"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+  <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"sha"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"329688480d39049927147c162b9d2deaf885005f"</span>
+<span class="p" style="border: 0px; margin: 0px; padding: 0px;">}</span></code></pre><h3 id="response-2" style="border: 0px; margin: 1.5em 0px 0.5em; padding: 0px; font-size: 14px; color: rgb(51, 51, 51); position: relative; font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;"><a class="header-anchor" href="https://developer.github.com/v3/repos/contents/#response-2" style="border: 0px; margin: 0px; padding: 0px 5px 0px 10px; font-size: 16px; color: rgb(51, 51, 51); position: absolute; left: -32px; top: 0px; opacity: 0; height: 21px; width: 20px; font-stretch: normal; line-height: 20px; font-family: octicons; -webkit-font-smoothing: antialiased; -webkit-transition: opacity 0.3s ease-in-out 0s; transition: opacity 0.3s ease-in-out 0s;"></a>Response</h3><pre class="headers" style="border-bottom-style: none; border-top-color: rgb(202, 202, 202); border-right-color: rgb(202, 202, 202); border-left-color: rgb(202, 202, 202); margin-top: 2em; margin-bottom: 0px; padding: 10px; font-size: 12px; font-stretch: normal; line-height: 1.4em; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 3px 3px 0px 0px; color: rgb(57, 57, 57); background-color: rgb(244, 244, 244);"><code style="border: 0px; margin: 0px; font-size: 12px; white-space: pre; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;">Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre><pre style="border-color: rgb(221, 221, 221) rgb(202, 202, 202) rgb(202, 202, 202); margin-bottom: 2em; padding: 10px; font-size: 12px; font-stretch: normal; line-height: 1.4em; font-family: Consolas, 'Liberation Mono', Courier, monospace; border-radius: 0px 0px 3px 3px; color: rgb(57, 57, 57); background-color: rgb(250, 250, 251);"><code class="language-javascript highlight" style="border: 0px; margin: 0px; font-size: 12px; white-space: pre; font-stretch: normal; line-height: normal; font-family: Consolas, 'Liberation Mono', Courier, monospace;"><span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+  <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"content"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"name"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"hello.txt"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"path"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"notes/hello.txt"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"sha"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"95b966ae1c166bd92f8ae7d1c313e738c731dfc3"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"size"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="mi" style="border: 0px; margin: 0px; padding: 0px; color: rgb(0, 153, 153);">9</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"url"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://api.github.com/repos/octocat/Hello-World/contents/notes/hello.txt"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"html_url"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://github.com/octocat/Hello-World/blob/master/notes/hello.txt"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"git_url"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://api.github.com/repos/octocat/Hello-World/git/blobs/95b966ae1c166bd92f8ae7d1c313e738c731dfc3"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"type"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"file"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"_links"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"self"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://api.github.com/repos/octocat/Hello-World/contents/notes/hello.txt"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"git"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://api.github.com/repos/octocat/Hello-World/git/blobs/95b966ae1c166bd92f8ae7d1c313e738c731dfc3"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"html"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://github.com/octocat/Hello-World/blob/master/notes/hello.txt"</span>
+    <span class="p" style="border: 0px; margin: 0px; padding: 0px;">}</span>
+  <span class="p" style="border: 0px; margin: 0px; padding: 0px;">},</span>
+  <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"commit"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"sha"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"7638417db6d59f3c431d3e1f261cc637155684cd"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"url"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://api.github.com/repos/octocat/Hello-World/git/commits/7638417db6d59f3c431d3e1f261cc637155684cd"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"html_url"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://github.com/octocat/Hello-World/git/commit/7638417db6d59f3c431d3e1f261cc637155684cd"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"author"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"date"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"2010-04-10T14:10:01-07:00"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"name"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"Scott Chacon"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"email"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"schacon@gmail.com"</span>
+    <span class="p" style="border: 0px; margin: 0px; padding: 0px;">},</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"committer"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"date"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"2010-04-10T14:10:01-07:00"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"name"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"Scott Chacon"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"email"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"schacon@gmail.com"</span>
+    <span class="p" style="border: 0px; margin: 0px; padding: 0px;">},</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"message"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"my commit message"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"tree"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"url"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://api.github.com/repos/octocat/Hello-World/git/trees/691272480426f78a0138979dd3ce63b77f706feb"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+      <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"sha"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"691272480426f78a0138979dd3ce63b77f706feb"</span>
+    <span class="p" style="border: 0px; margin: 0px; padding: 0px;">},</span>
+    <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"parents"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="p" style="border: 0px; margin: 0px; padding: 0px;">[</span>
+      <span class="p" style="border: 0px; margin: 0px; padding: 0px;">{</span>
+        <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"url"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://api.github.com/repos/octocat/Hello-World/git/commits/1acc419d4d6a9ce985db7be48c6349a0475975b5"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+        <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"html_url"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"https://github.com/octocat/Hello-World/git/commit/1acc419d4d6a9ce985db7be48c6349a0475975b5"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">,</span>
+        <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"sha"</span><span class="p" style="border: 0px; margin: 0px; padding: 0px;">:</span> <span class="s2" style="border: 0px; margin: 0px; padding: 0px; color: rgb(221, 17, 68);">"1acc419d4d6a9ce985db7be48c6349a0475975b5"</span>
+      <span class="p" style="border: 0px; margin: 0px; padding: 0px;">}</span>
+    <span class="p" style="border: 0px; margin: 0px; padding: 0px;">]</span>
+  <span class="p" style="border: 0px; margin: 0px; padding: 0px;">}</span>
+<span class="p" style="border: 0px; margin: 0px; padding: 0px;">}</span></code></pre><h2 id="delete-a-file" style="border: 0px; margin: 2em auto 1em; padding: 0px; font-size: 22px; color: rgb(51, 51, 51); position: relative; font-family: 'Helvetica Neue', arial, freesans, clean, sans-serif; line-height: 21px;"><a class="header-anchor" href="https://developer.github.com/v3/repos/contents/#delete-a-file" style="border: 0px; margin: 0px; padding: 0px 5px 0px 10px; font-size: 16px; color: rgb(51, 51, 51); position: absolute; left: -32px; top: 0px; opacity: 0; height: 21px; width: 20px; font-stretch: normal; line-height: 20px; font-family: octicons; -webkit-font-smoothing: antialiased; -webkit-transition: opacity 0.3s ease-in-out 0s; transition: opacity 0.3s ease-in-out 0s;"></a>Delete a file</h2></div>
+
+        </div>
+        <!-- end  blog -->
+
+
+
+      </div>
+      <div class="col-md-4">
+
+        <div>
+          <h2>&nbsp;</h2>
+        </div>
+
+        <div class="mygap myhide" style="font-size: 24px; background-color: #f7f7f7; padding: 5px 10px">
+          <span class="mega-octicon octicon-pencil mybtn" style="font-size: 24px;"></span>
+          <span class="mega-octicon octicon-trashcan mybtn" style="font-size: 24px;"></span>
+          <span class="mega-octicon octicon-plus mybtn" style="font-size: 24px;"></span>
+
+        </div>
+
+
+
+        <div class="mygap" id="saveOrCancelBtnGrp" style="display: none">
+          <button type="button" id="saveBlogBtn" class="btn btn-success">
+            保存<span class="glyphicon glyphicon-ok  "></span>
+          </button>
+          <button type="button" id="cancleBtn" class="btn btn-default">
+            取消<span class="glyphicon glyphicon-remove  "></span>
+          </button>
+        </div>
+
+        <div class="mygap" id="editorToolbar" style="display: none;">
+          <span class="glyphicon glyphicon-font" title="字体"></span> <span class="glyphicon glyphicon-bold" title="加粗"></span> <span class="glyphicon glyphicon-italic" title="斜体"></span> <span class="glyphicon glyphicon-align-left" title="左对齐"></span> <span class="glyphicon glyphicon-align-center" title="居中"></span> <span class="glyphicon glyphicon-align-right" title="右对齐"></span> <span class="glyphicon glyphicon-align-justify" title="两端对齐"></span> <span class="glyphicon glyphicon-link" title="超链接"></span> <span class="glyphicon glyphicon-picture" title="图片"></span> <span class="glyphicon glyphicon-film" title="视频"></span>
+
+
+        </div>
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading" style="padding: 0px 0px 0px 15px">
+            <span class=" mega-octicon octicon-bookmark"></span> <span class="panel-title" style="font-size: 24px">&nbsp;书签</span>
+          </div>
+          <div class="panel-body" contenteditable="true">
+
+            <div>
+              <a href="#" class=" ">Cras justo odio</a>
+            </div>
+            <div>
+              <a href="#" class="">Dapibus ac facilisis in</a>
+            </div>
+            <div>
+              <a href="#" class="">Morbi leo risus</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" style="padding: 0px 0px 0px 15px">
+            <span class=" mega-octicon notes"></span> <span class="panel-title" style="font-size: 24px">&nbsp;笔记</span>
+            <!--  <h3 class="panel-title mega-octicon notes">笔记</h3> -->
+          </div>
+          <div class="panel-body" contenteditable="true">笔记</div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" style="padding: 0px 0px 0px 15px">
+            <span class=" mega-octicon octicon-quote"></span> <span class="panel-title" style="font-size: 24px">&nbsp;参考</span>
+          </div>
+          <div class="panel-body" contenteditable="true">参考</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
